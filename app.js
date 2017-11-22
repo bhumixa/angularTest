@@ -6,13 +6,14 @@ angular.module('app', ['ngRoute'])
     .when('/', {
       controller:'MainCtrl',
       templateUrl:'views/list.html',
-    })/*
-    .when('/edit/:projectId', {
-      controller:'EditProjectController as editProject',
-      templateUrl:'detail.html',
-      resolve: resolveProjects
+      resolve: { isOffset: function() { return false } }
     })
-    .when('/new', {
+    .when('/edit/:taskName', {
+      controller:'EditTaskCtrl',
+      templateUrl:'views/edittask.html',
+      resolve: { isOffset: function() { return false } }
+    })
+    /*.when('/new', {
       controller:'NewProjectController as editProject',
       templateUrl:'detail.html',
       resolve: resolveProjects

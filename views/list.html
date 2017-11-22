@@ -4,8 +4,10 @@
       <li ng-repeat="todo in todoList">
         <label class="checkbox">
           <input type="checkbox" ng-model="todo.status">
-          <span class="done-{{todo.status}}">{{todo.name}}</span>
+          <span class="done-{{todo.status}}">{{todo.name}}</span> 
+
         </label>
+        <span ng-click="edit(todo.name)"> edit </span>
       </li>
     </ul>
     <form ng-submit="addTodo()">
